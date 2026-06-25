@@ -1,5 +1,8 @@
 FROM karrio/server:2026.1.32
 
+ENV ALLOWED_HOSTS=*
+ENV KARRIO_HTTP_PORT=5002
+
 RUN pip install --no-cache-dir karrio.shipengine==2026.1.32
 
 # Patch broken migration 0078: MODELS variable is undefined when import fails
